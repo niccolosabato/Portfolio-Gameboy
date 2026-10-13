@@ -99,6 +99,22 @@ export const PROGETTI = [
       },
     ],
   },
+  {
+    id: "suicidio-giovanile",
+    sezione: "ANALISI",
+    nome: "Suicidio giovanile",
+    tipo: "ANALISI STATISTICA",
+    riga: "Salute mentale nei giovani",
+    descrizione:
+      "Il suicidio è la terza causa di morte fra i 15 e i 29 anni, con 1.124 decessi nel 2021-2023. L'analisi misura il fenomeno dal 2003: tassi per sesso e regione, sintomi depressivi e ricoveri per disturbi psichici.",
+    stack: ["ISTAT", "Eurostat", "OMS"],
+    link: [
+      {
+        label: "DOCUMENTO",
+        url: "https://docs.google.com/document/d/1iZlEsRHXOvukP7RPmO1Ghms4zSjpvocDg-r_iyCGREA/edit",
+      },
+    ],
+  },
 
   // --- DA COMPILARE ---------------------------------------------------
   // Qui vanno le analisi statistiche, una voce per Google Doc. Servono un
