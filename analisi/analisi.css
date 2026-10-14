@@ -90,6 +90,18 @@ main img {
   margin: 1.9rem auto;
 }
 
+/* Le figure escono dalla colonna di lettura: i PNG nascono larghi 1000-1900
+   pixel e dentro 40rem si leggono a meta' della loro risoluzione, con il
+   testo dei grafici minuscolo. Sugli schermi larghi ogni figura ha una
+   banda sua, piu' larga di 6rem per lato, che resta dentro la finestra
+   (a 820px di viewport i margini negativi sono ancora contenuti). */
+@media (min-width: 820px) {
+  main img {
+    max-width: calc(100% + 12rem);
+    margin-inline: -6rem;
+  }
+}
+
 /* Tabelle: sugli schermi stretti scorrono da sole invece di sforare */
 
 .tabella { margin: 1.6rem 0; overflow-x: auto; }
@@ -132,5 +144,5 @@ footer a { color: inherit; }
 @media print {
   .barra, footer { display: none; }
   body { font-size: 11pt; }
-  main img { break-inside: avoid; }
+  main img { break-inside: avoid; max-width: 100%; margin-inline: auto; }
 }
