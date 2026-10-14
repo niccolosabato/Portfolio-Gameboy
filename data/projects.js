@@ -76,12 +76,7 @@ export const PROGETTI = [
     descrizione:
       "Rapporto sullo scarto fra la violenza che le donne dichiarano all'ISTAT e quella che arriva a denuncia, più l'andamento di condanne e detenuti e la parte sulle vittime minorenni.",
     stack: ["ISTAT", "dati ministeriali"],
-    link: [
-      {
-        label: "DOCUMENTO",
-        url: "https://docs.google.com/document/d/1CIKL1s-yVU6bndmdKX2jlnR_WC8mJ0xYIBAMISr8K58/edit",
-      },
-    ],
+    link: [{ label: "LEGGI", url: "/analisi/violenza-sessuale/" }],
   },
   {
     id: "lavoro-giovanile",
@@ -92,12 +87,7 @@ export const PROGETTI = [
     descrizione:
       "Due problemi opposti: al Sud i giovani restano fuori dal lavoro perché manca, al Centro-Nord le imprese non trovano profili tecnici. NEET regionali da Eurostat e previsioni Excelsior, con un modello che stima il rischio.",
     stack: ["Eurostat", "Excelsior"],
-    link: [
-      {
-        label: "DOCUMENTO",
-        url: "https://docs.google.com/document/d/1fVb0Rmpoc5o3gcO3UezIQMdw7TZoo4uDyZO_35PK8XU/edit",
-      },
-    ],
+    link: [{ label: "LEGGI", url: "/analisi/lavoro-giovanile/" }],
   },
   {
     id: "suicidio-giovanile",
@@ -108,18 +98,14 @@ export const PROGETTI = [
     descrizione:
       "Il suicidio è la terza causa di morte fra i 15 e i 29 anni, con 1.124 decessi nel 2021-2023. L'analisi misura il fenomeno dal 2003: tassi per sesso e regione, sintomi depressivi e ricoveri per disturbi psichici.",
     stack: ["ISTAT", "Eurostat", "OMS"],
-    link: [
-      {
-        label: "DOCUMENTO",
-        url: "https://docs.google.com/document/d/1iZlEsRHXOvukP7RPmO1Ghms4zSjpvocDg-r_iyCGREA/edit",
-      },
-    ],
+    link: [{ label: "LEGGI", url: "/analisi/suicidio-giovanile/" }],
   },
 
   // --- DA COMPILARE ---------------------------------------------------
-  // Qui vanno le analisi statistiche, una voce per Google Doc. Servono un
-  // link pubblico ("chiunque abbia il link → Visualizzatore") e una
-  // descrizione che stia in nove righe. Modello da copiare:
+  // Qui vanno le analisi statistiche, una voce per pagina di lettura. La
+  // pagina vive in `analisi/<id>/` e si genera dal Google Doc con
+  // `python3 genera_analisi.py`; la descrizione deve stare in nove righe.
+  // Modello da copiare:
   //
   // {
   //   id: "nome-corto",
@@ -129,6 +115,6 @@ export const PROGETTI = [
   //   riga: "una riga di anteprima",
   //   descrizione: "Due o tre frasi su cosa contiene e su che dati usa.",
   //   stack: ["dati INPS", "dati ISTAT"],
-  //   link: [{ label: "DOCUMENTO", url: "https://docs.google.com/..." }],
+  //   link: [{ label: "LEGGI", url: "/analisi/nome-corto/" }],
   // },
 ];

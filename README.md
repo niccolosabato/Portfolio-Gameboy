@@ -40,6 +40,8 @@ js/screens/home.js  la home: l'elenco dei progetti
 js/screens/         una schermata per file
 data/projects.js    i progetti
 data/contacts.js    i contatti
+analisi/            le pagine di lettura delle analisi
+genera_analisi.py   le rigenera dai Google Doc
 ```
 
 ### Le due tecniche di disegno
@@ -112,15 +114,30 @@ da `file://`.
 Si tocca solo `data/projects.js`. I limiti sono scritti in cima al file; per
 verificarli basta `node check.mjs`, che li controlla tutti e dice cosa sfora.
 
-Il sito **non ospita file**: ogni voce ha bisogno di un URL pubblico, che sia
-un repo, un sito o un documento condiviso.
+I progetti rimandano a un URL pubblico, che sia un repo o un sito. Le analisi
+invece hanno una pagina di lettura sul sito, sotto `analisi/`.
+
+## Le pagine delle analisi
+
+Le analisi si leggono su pagine del sito, fuori dal guscio Game Boy: foglio
+bianco, testo nero, un solo foglio di stile per tutte (`analisi/analisi.css`).
+Non si scrivono a mano, si generano dai Google Doc con
+
+```bash
+python3 genera_analisi.py
+```
+
+Lo script scarica i documenti, li converte con pandoc, copia le figure sotto
+`analisi/<slug>/figures/` e riscrive le pagine. Quando un documento cambia si
+rilancia lo script e si committano le pagine rigenerate. Serve pandoc nel PATH.
 
 ## Le schermate
 
 La home **è** l'elenco dei contenuti, diviso in sezioni: `PROGETTI` e
 `ANALISI`. Non c'è un menu prima. In fondo, staccate da un filetto, ci sono
 `CONTATTI` e l'interruttore dell'audio. Da ogni voce si apre la sua scheda,
-con descrizione, stack e i link da aprire.
+con descrizione, stack e i link da aprire: per le analisi il link è la pagina
+di lettura sul sito.
 
 L'audio è **acceso** di default: il primo suono arriva alla prima pressione,
 che è anche il momento in cui il browser permette di riprodurlo.
